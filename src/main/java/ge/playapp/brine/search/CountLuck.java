@@ -3,6 +3,8 @@ package ge.playapp.brine.search;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -64,7 +66,11 @@ public class CountLuck {
         Scanner scanner = new Scanner(new InputStreamReader(new FileInputStream("out/test.in")));
         int T = scanner.nextInt();
 
-        for (int t = 0; t < T; t++) {
+        int[] c =new int[100];
+        Arrays.stream(c).boxed()
+                .sorted(Collections.reverseOrder()).mapToInt(Integer::intValue).toArray();
+
+        for (int t  = 0; t < T; t++) {
             int n = scanner.nextInt();
             int m = scanner.nextInt();
 
